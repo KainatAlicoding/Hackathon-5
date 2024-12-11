@@ -5,54 +5,76 @@ const Blog = () => {
   return (
     <div>
       {/* Header */}
-      <header className="bg-white shadow-md">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold flex items-center">
-            <img
-              src="/Meubel House_Logos-05.png"
-              alt="logo"
-              className="w-12 h-8 mr-2"
-            />
-            Furniro
-          </h1>
-          <ul className="flex space-x-8 list-none m-0 p-0">
-            <li>
-              <Link href="/" className="text-gray-700 hover:text-black">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/shop" className="text-gray-700 hover:text-black">
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog" className="text-gray-700 hover:text-black">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-gray-700 hover:text-black">
-                Contact
-              </Link>
-            </li>
-          </ul>
-          <div className="flex items-center space-x-4">
-            <a href="#" className="text-gray-700 hover:text-black">
-              <img src="/mdi_account-alert-outline.png" alt="profile" />
-            </a>
-            <a href="#" className="text-gray-700 hover:text-black">
-              <img src="/akar-icons_search.png" alt="search" />
-            </a>
-            <a href="#" className="text-gray-700 hover:text-black">
-              <img src="/akar-icons_heart.png" alt="wishlist" />
-            </a>
-            <a href="#" className="text-gray-700 hover:text-black">
-              <img src="/ant-design_shopping-cart-outlined.png" alt="cart" />
-            </a>
-          </div>
-        </div>
-      </header>
+<header className="bg-white shadow-md">
+  <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    {/* Logo and Title */}
+    <h1 className="text-xl font-bold flex items-center">
+      <img
+        src="\Meubel House_Logos-05.png"
+        alt="logo"
+        className="w-12 h-8 mr-2"
+      />
+      <span className="hidden sm:inline">Furniro</span>
+    </h1>
+    
+    {/* Navigation Menu */}
+    <ul
+      className="hidden sm:flex space-x-6 text-gray-700 font-medium"
+      style={{ listStyle: "none", margin: 0, padding: 0 }}
+    >
+      <li>
+        <Link href="/">Home</Link>
+      </li>
+      <li>
+        <Link href="/shop">Shop</Link>
+      </li>
+      <li>
+        <Link href="/blog">Blog</Link>
+      </li>
+      <li>
+        <Link href="/contact">Contact</Link>
+      </li>
+    </ul>
+
+    {/* Mobile Menu Button */}
+    <button
+      className="sm:hidden flex items-center px-2 py-1 border rounded text-gray-700"
+      id="mobile-menu-btn"
+    >
+      <img src="\hamburguer.jpg" alt="menu" className="w-6 h-6" />
+    </button>
+
+    {/* Icons */}
+    <div className="hidden sm:flex items-center space-x-4">
+      <a href="#" className="text-gray-700 hover:text-black">
+        <img src="\mdi_account-alert-outline.png" alt="account" />
+      </a>
+      <a href="#" className="text-gray-700 hover:text-black">
+        <img src="\akar-icons_search.png" alt="search" />
+      </a>
+      <a href="#" className="text-gray-700 hover:text-black">
+        <img src="\akar-icons_heart.png" alt="wishlist" />
+      </a>
+      <a href="#" className="text-gray-700 hover:text-black">
+        <img src="\ant-design_shopping-cart-outlined.png" alt="cart" />
+      </a>
+    </div>
+  </div>
+
+  {/* Mobile Menu (hidden by default) */}
+  <div
+    id="mobile-menu"
+    className="sm:hidden flex flex-col space-y-2 px-4 py-2 bg-gray-100"
+    style={{ display: "none" }}
+  >
+    <Link href="/" className="text-gray-700 hover:text-black">Home</Link>
+    <Link href="/shop" className="text-gray-700 hover:text-black">Shop</Link>
+    <Link href="/blog" className="text-gray-700 hover:text-black">Blog</Link>
+    <Link href="/contact" className="text-gray-700 hover:text-black">Contact</Link>
+  </div> 
+
+
+</header>
 
       {/* Hero Section */}
       <div className="relative">
@@ -80,16 +102,14 @@ const Blog = () => {
         </div>
       </div>
 
-      {/* Promotional Banner */}
-      <div className="mt-12">
-        <img
-          src="/Frame 161.png"
-          alt="Promotional Banner"
-          className="w-full max-w-screen-xl h-[170px] sm:h-[200px] object-cover mx-auto"
-          style={{ maxWidth: "1300px" }}
-        />
-      </div>
-
+     {/* Promotional Banner */}
+<div className="mt-12">
+  <img
+    src="/Frame 161.png"
+    alt="Promotional Banner"
+    className="w-full max-w-screen-xl h-auto sm:h-[200px] object-cover mx-auto"
+  />
+</div>
       {/* Footer */}
       <footer className="bg-gray-100 border-t border-gray-200 mt-12">
         <div className="container mx-auto py-10 px-6 grid grid-cols-1 md:grid-cols-4 gap-8">

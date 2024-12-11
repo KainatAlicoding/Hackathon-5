@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from 'next/link';
 import { useState } from "react";
+import Carousel from "@/app/components/page";
 
 export default function Home() {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -60,7 +61,7 @@ export default function Home() {
       {/* Background Image */}
       <div className="relative">
         <img
-          src="/pic.png" // Replace with your background image path
+          src="/pic.png" //  background image path
           alt="Background"
           className="w-full h-auto object-cover"
         />
@@ -111,25 +112,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Inspiration Section */}
-      <section className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4 py-16 flex flex-col lg:flex-row items-center gap-8">
-          <div className="lg:w-1/2">
-            <h3 className="text-2xl font-bold mb-4">50+ Beautiful Rooms Inspiration</h3>
-            <p className="text-gray-600 mb-6">
-              Our designer has created beautiful room prototypes that will inspire you.
-            </p>
-            <button className="bg-yellow-500 text-white py-3 px-6 rounded-md hover:bg-yellow-600">
-              Explore More
-            </button>
-          </div>
-          <div className="lg:w-1/2">
-            <div className="w-full h-96 bg-white-300 flex items-center justify-center">
-              <img src="image 4.png" alt="pic" sizes="w-500 h-300" />
-            </div>
-          </div>
-        </div>
-      </section>
+     {/* Inspiration Section */}
+<section className="bg-pink-50 py-16">
+  <div className="container mx-auto px-4 py-16 flex flex-col lg:flex-row items-center gap-8">
+    {/* Text Content */}
+    <div className="lg:w-1/2">
+      <h3 className="text-2xl font-bold mb-4">50+ Beautiful Rooms Inspiration</h3>
+      <p className="text-gray-600 mb-6">
+        Our designer has created beautiful room prototypes that will inspire you.
+      </p>
+      <button className="bg-yellow-500 text-white py-3 px-6 rounded-md hover:bg-yellow-600">
+        Explore More
+      </button>
+    </div>
+
+    {/* Carousel Content */}
+    <div className="lg:w-1/2 flex justify-center">
+      <Carousel />
+    </div>
+  </div>
+</section>
+
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 py-10">

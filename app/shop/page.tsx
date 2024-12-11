@@ -1,65 +1,93 @@
 // app/shop/page.tsx
+import { Image } from "lucide-react";
 import Link from "next/link";
 
 const Shop = () => {
   const products = [
-    { id: "1", name: "Modern Chair", price: "$120", image: "/images/chair.jpg" },
-    { id: "2", name: "Wooden Table", price: "$250", image: "/images/table.jpg" },
-    { id: "3", name: "Luxury Sofa", price: "$450", image: "/images/sofa.jpg" },
-    { id: "4", name: "Stylish Lamp", price: "$80", image: "/images/lamp.jpg" },
+    { id: "1", name: "Modern Chair", price: "$120", image: "/Images (1).png" },
+    { id: "2", name: "Wooden Table", price: "$250", image: "/image 1.png" },
+    { id: "3", name: "Luxury Sofa", price: "$450", image: "/images.png" },
+    { id: "4", name: "Stylish Lamp", price: "$80", image: "/image 4.png" },
+    { id: "5", name: "Modern Chair", price: "$120", image: "/Images (1).png" },
+    { id: "6", name: "Wooden Table", price: "$250", image: "/image 1.png" },
+    { id: "7", name: "Luxury Sofa", price: "$450", image: "/images.png" },
+    { id: "8", name: "Stylish Lamp", price: "$80", image: "/image 4.png" },
   ];
+  
 
   return (
     <>
       {/* Header */}
-      <header className="bg-white shadow-md">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold flex items-center">
-            <img
-              src="\Meubel House_Logos-05.png"
-              alt="logo"
-              className="w-12 h-8 mr-2"
-            />
-            Furniro
-          </h1>
-          <ul
-            style={{
-              listStyle: "none",
-              display: "flex",
-              gap: "20px",
-              margin: 0,
-              padding: 0,
-            }}
-          >
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/shop">Shop</Link>
-            </li>
-            <li>
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-          <div className="flex items-center space-x-4">
-            <a href="#" className="text-gray-700 hover:text-black">
-              <img src="\mdi_account-alert-outline.png" alt="account" />
-            </a>
-            <a href="#" className="text-gray-700 hover:text-black">
-              <img src="\akar-icons_search.png" alt="search" />
-            </a>
-            <a href="#" className="text-gray-700 hover:text-black">
-              <img src="\akar-icons_heart.png" alt="wishlist" />
-            </a>
-            <a href="#" className="text-gray-700 hover:text-black">
-              <img src="\ant-design_shopping-cart-outlined.png" alt="cart" />
-            </a>
-          </div>
-        </div>
-      </header>
+<header className="bg-white shadow-md">
+  <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    {/* Logo and Title */}
+    <h1 className="text-xl font-bold flex items-center">
+      <img
+        src="\Meubel House_Logos-05.png"
+        alt="logo"
+        className="w-12 h-8 mr-2"
+      />
+      <span className="hidden sm:inline">Furniro</span>
+    </h1>
+    
+    {/* Navigation Menu */}
+    <ul
+      className="hidden sm:flex space-x-6 text-gray-700 font-medium"
+      style={{ listStyle: "none", margin: 0, padding: 0 }}
+    >
+      <li>
+        <Link href="/">Home</Link>
+      </li>
+      <li>
+        <Link href="/shop">Shop</Link>
+      </li>
+      <li>
+        <Link href="/blog">Blog</Link>
+      </li>
+      <li>
+        <Link href="/contact">Contact</Link>
+      </li>
+    </ul>
+
+    {/* Mobile Menu Button */}
+    <button
+      className="sm:hidden flex items-center px-2 py-1 border rounded text-gray-700"
+      id="mobile-menu-btn"
+    >
+      <img src="\hamburguer.jpg" alt="menu" className="w-6 h-6" />
+    </button>
+
+    {/* Icons */}
+    <div className="hidden sm:flex items-center space-x-4">
+      <a href="#" className="text-gray-700 hover:text-black">
+        <img src="\mdi_account-alert-outline.png" alt="account" />
+      </a>
+      <a href="#" className="text-gray-700 hover:text-black">
+        <img src="\akar-icons_search.png" alt="search" />
+      </a>
+      <a href="#" className="text-gray-700 hover:text-black">
+        <img src="\akar-icons_heart.png" alt="wishlist" />
+      </a>
+      <a href="#" className="text-gray-700 hover:text-black">
+        <img src="\ant-design_shopping-cart-outlined.png" alt="cart" />
+      </a>
+    </div>
+  </div>
+
+  {/* Mobile Menu (hidden by default) */}
+  <div
+    id="mobile-menu"
+    className="sm:hidden flex flex-col space-y-2 px-4 py-2 bg-gray-100"
+    style={{ display: "none" }}
+  >
+    <Link href="/" className="text-gray-700 hover:text-black">Home</Link>
+    <Link href="/shop" className="text-gray-700 hover:text-black">Shop</Link>
+    <Link href="/blog" className="text-gray-700 hover:text-black">Blog</Link>
+    <Link href="/contact" className="text-gray-700 hover:text-black">Contact</Link>
+  </div> 
+
+
+</header>
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
@@ -87,8 +115,8 @@ const Shop = () => {
               className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition duration-300 p-4"
             >
               <Link href={`/shop/${product.id}`}>
-                <img
-                  src={product.image}
+                <img 
+                  src={product.image } 
                   alt={product.name}
                   className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
                 />
@@ -106,15 +134,16 @@ const Shop = () => {
           ))}
         </div>
 
-        {/* Picture at the bottom */}
-        <div className="mt-12">
-          <img
-            src="/Frame 161.png" // Replace with your actual image path
-            alt="Promotional Banner"
-            className="w-full max-w-screen-xl h-[170px] object-cover mx-auto"
-            style={{ maxWidth: "1300px" }}
-          />
-        </div>
+        {/* Promotional Banner */}
+<div className="mt-12">
+  <img
+    src="/Frame 161.png"
+    alt="Promotional Banner"
+    className="w-full max-w-screen-xl h-auto sm:h-[200px] object-cover mx-auto"
+  />
+</div>
+        
+
       </div>
 
       {/* Footer */}
